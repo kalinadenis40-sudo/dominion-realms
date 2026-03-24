@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sand:          #F5F0E8;
+  --sand-2:        #EDE6D6;
+  --sand-3:        #DDD3BE;
+  --ink:           #1C1712;
+  --ink-light:     #3D3428;
+  --ink-muted:     #6B5D4A;
+  --gold:          #B8922A;
+  --gold-light:    #D4A940;
+  --gold-pale:     #F7EDD0;
+  --crimson:       #8B2020;
+  --crimson-light: #F2E4E4;
+  --teal:          #1A5C4A;
+  --teal-light:    #E0EDE9;
+  --navy:          #1E3A5F;
+  --navy-light:    #E2E9F2;
+  --border:        rgba(90,70,40,0.15);
+  --border-strong: rgba(90,70,40,0.28);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--sand);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--sand-2); }
+::-webkit-scrollbar-thumb { background: var(--sand-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-muted); }
+
+/* Typography */
+.font-cinzel { font-family: 'Cinzel', serif; }
+
+/* Utility classes */
+.card-base {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(28,23,18,0.08);
+}
+
+.card-dark {
+  background: var(--ink);
+  border: 1px solid rgba(184,146,42,0.25);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(28,23,18,0.15);
+}
+
+.tag {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.tag-danger  { background: var(--crimson-light); color: var(--crimson); }
+.tag-success { background: var(--teal-light);    color: var(--teal); }
+.tag-warning { background: #FFF3E0;              color: #8B4A00; }
+.tag-info    { background: var(--navy-light);    color: var(--navy); }
+.tag-gold    { background: var(--gold-pale);     color: var(--gold); }
+
+/* Progress bar */
+.progress { height: 4px; background: var(--sand-3); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s ease; }
+
+/* Animated pulse for active timers */
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+.pulse-gold { animation: pulse-gold 2s infinite; }
